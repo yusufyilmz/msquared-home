@@ -1,22 +1,20 @@
-import { HeroSection as FirstPage } from "@/components/hero-section";
-import { ProductsSection } from "@/components/featured-products-section";
-import { CategoriesSection } from "@/components/categories-section";
-import { AboutPreviewSection } from "@/components/about-preview-section";
-import { StudioPreviewSection } from "@/components/studio-preview-section";
-import { JournalPreviewSection } from "@/components/social-proof-section";
-import { ClosingCtaSection } from "@/components/closing-cta-section";
-import { HeroSection } from "@/components/hero-section-2";
-import { InstagramFeedSection } from "@/components/instagram-feed-section";
+import { HeroSection } from "@/components/hero-section";
+import { ProductsSection } from "@/components/sections/featured-products-section";
+import { CategoriesSection } from "@/components/sections/categories-section";
+import { AboutPreviewSection } from "@/components/sections/about-preview-section";
+import { StudioPreviewSection } from "@/components/sections/studio-preview-section";
+import { JournalPreviewSection } from "@/components/sections/social-proof-section";
+import { ClosingCtaSection } from "@/components/sections/closing-cta-section";
+import { InstagramFeedSection } from "@/components/sections/instagram-feed-section";
+import { FunnyReelSection } from "@/components/sections/funny-reels";
 import { siteCopy } from "@/config/siteCopy";
-import { FunnyReelSection } from "@/components/funny-reels";
 
 export default function HomePage() {
 	const instagramFeed = siteCopy.instagramFeed;
 
 	return (
 		<>
-			{/* <HeroSection /> */}
-			<FirstPage />
+			<HeroSection />
 			<ProductsSection />
 			<CategoriesSection />
 			<AboutPreviewSection />

@@ -1,4 +1,4 @@
-import { AboutPreviewSection } from "@/components/about-preview-section";
+import { AboutPreviewSection } from "@/components/sections/about-preview-section";
 
 export default function AboutPage() {
 	return (

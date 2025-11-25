@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import { SectionHeader } from "@/components/ui/section-header";
 
 type SectionShellProps = {
 	id?: string;
@@ -7,6 +8,7 @@ type SectionShellProps = {
 	intro?: string;
 	align?: "left" | "center";
 	children: ReactNode;
+	className?: string;
 };
 
 export function SectionShell({
@@ -16,20 +18,17 @@ export function SectionShell({
 	intro,
 	align = "left",
 	children,
+	className,
 }: SectionShellProps) {
-	const alignClass = align === "center" ? "text-center mx-auto" : "text-left";
-	const introWidth = align === "center" ? "max-w-2xl" : "max-w-3xl";
-
 	return (
-		<section id={id} className="section">
+		<section id={id} className={`section ${className || ""}`}>
 			<div className="section-inner">
-				{(eyebrow || heading || intro) && (
-					<header className={`mb-10 ${alignClass} ${introWidth}`}>
-						{eyebrow ? <p className="section-title">{eyebrow}</p> : null}
-						{heading ? <h2 className="h2 mb-3">{heading}</h2> : null}
-						{intro ? <p className="body-lg">{intro}</p> : null}
-					</header>
-				)}
+				<SectionHeader
+					eyebrow={eyebrow}
+					heading={heading}
+					intro={intro}
+					align={align}
+				/>
 				{children}
 			</div>
 		</section>

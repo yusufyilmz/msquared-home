@@ -1,8 +1,7 @@
-// components/featured-product-card.tsx
-
 import Image from "next/image";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
+import { Badge } from "@/components/ui/badge";
 
 type FeaturedProductCardProps = {
 	slug: string;
@@ -56,9 +55,7 @@ export function FeaturedProductCard({
 			{/* Content */}
 			<div className="space-y-5">
 				{badge && (
-					<p className="uppercase tracking-[0.26em] text-muted text-[0.75rem] md:text-sm">
-						{badge}
-					</p>
+					<Badge className="text-[0.75rem] md:text-sm">{badge}</Badge>
 				)}
 				<Link href={`/products/${slug}`}>
 					<h3 className="font-display tracking-tight transition-colors group-hover:text-ink/80 text-[2rem] md:text-[2.8rem]">

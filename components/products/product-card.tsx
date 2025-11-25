@@ -1,8 +1,7 @@
-// components/product-card.tsx
-
 import Image from "next/image";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
+import { Badge } from "@/components/ui/badge";
 
 export type ProductCardVariant = "standard" | "compact" | "grid";
 
@@ -64,11 +63,7 @@ export function ProductCard({
 
 					{/* Content */}
 					<div className="space-y-2.5">
-						{badge && (
-							<p className="text-[0.7rem] uppercase tracking-[0.26em] text-muted">
-								{badge}
-							</p>
-						)}
+						{badge && <Badge>{badge}</Badge>}
 						<h3
 							className={cn(
 								"font-display tracking-tight transition-colors group-hover:text-ink/80",
@@ -120,11 +115,7 @@ export function ProductCard({
 
 			{/* Content */}
 			<div className={cn(spacing)}>
-				{badge && (
-					<p className="text-[0.7rem] uppercase tracking-[0.26em] text-muted">
-						{badge}
-					</p>
-				)}
+				{badge && <Badge>{badge}</Badge>}
 				<Link href={`/products/${slug}`}>
 					<h3
 						className={cn(

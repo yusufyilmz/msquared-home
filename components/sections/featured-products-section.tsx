@@ -1,8 +1,6 @@
-// components/featured-products-section.tsx
-
 import { SectionShell } from "@/components/section-shell";
-import { ProductCard } from "@/components/product-card";
-import { FeaturedProductCard } from "@/components/featured-product-card";
+import { ProductCard } from "@/components/products/product-card";
+import { FeaturedProductCard } from "@/components/products/featured-product-card";
 import { siteCopy } from "@/config/siteCopy";
 
 export function ProductsSection() {

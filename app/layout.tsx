@@ -3,8 +3,8 @@ import type { ReactNode } from "react";
 import "./globals.css";
 import { siteCopy } from "@/config/siteCopy";
 import { activeTheme } from "@/config/themes";
-import { SiteHeader } from "@/components/site-header";
-import { SiteFooter } from "@/components/site-footer";
+import { SiteHeader } from "@/components/layout/site-header";
+import { SiteFooter } from "@/components/layout/site-footer";
 
 export const metadata: Metadata = {
 	title: siteCopy.site.metaTitle,
