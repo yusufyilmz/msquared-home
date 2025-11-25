@@ -110,3 +110,4 @@ jspm_packages/
 
 # Cursor logs
 .cursor/logs/
+.vercel
