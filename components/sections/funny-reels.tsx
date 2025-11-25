@@ -38,7 +38,7 @@ export function FunnyReelSection({
 			<div className="relative mx-auto w-full">
 				{/* Decorative background gradient */}
 				<div className="absolute inset-0 -z-10 bg-gradient-to-br from-neutral-50 via-white to-neutral-100/50 rounded-3xl blur-3xl opacity-60" />
-				
+
 				{/* Reel container with enhanced styling */}
 				<div className="relative overflow-hidden rounded-3xl border border-neutral-200/60 bg-white/90 shadow-xl shadow-neutral-900/5 backdrop-blur-sm ring-1 ring-neutral-900/5">
 					<ClientOnlyInstagramEmbed url={REEL_URL} width="100%" captioned />

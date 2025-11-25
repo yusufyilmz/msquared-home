@@ -54,9 +54,7 @@ export function FeaturedProductCard({
 
 			{/* Content */}
 			<div className="space-y-5">
-				{badge && (
-					<Badge className="text-[0.75rem] md:text-sm">{badge}</Badge>
-				)}
+				{badge && <Badge className="text-[0.75rem] md:text-sm">{badge}</Badge>}
 				<Link href={`/products/${slug}`}>
 					<h3 className="font-display tracking-tight transition-colors group-hover:text-ink/80 text-[2rem] md:text-[2.8rem]">
 						{name}

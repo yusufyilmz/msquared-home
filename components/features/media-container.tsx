@@ -34,7 +34,13 @@ export function MediaContainer({
 	videoProps,
 }: MediaContainerProps) {
 	return (
-		<div className={cn("relative overflow-hidden", aspectRatio, containerClassName)}>
+		<div
+			className={cn(
+				"relative overflow-hidden",
+				aspectRatio,
+				containerClassName,
+			)}
+		>
 			{type === "video" ? (
 				<VideoPlayer
 					src={src}
@@ -58,4 +64,3 @@ export function MediaContainer({
 		</div>
 	);
 }
-

@@ -16,9 +16,9 @@ export function JournalPreviewSection() {
 			heading={copy.heading}
 			intro={copy.body}
 		>
-		<div className="grid gap-8 lg:gap-12 lg:grid-cols-2">
-			{/* Images on the left */}
-			<div className="grid grid-cols-3 grid-rows-2 gap-3 order-first align-top">
+			<div className="grid gap-8 lg:gap-12 lg:grid-cols-2">
+				{/* Images on the left */}
+				<div className="grid grid-cols-3 grid-rows-2 gap-3 order-first align-top">
 					{copy.images.map((src, index) => (
 						<div
 							key={src}
@@ -53,8 +53,8 @@ export function JournalPreviewSection() {
 							>
 								{copy.instagramHandle}
 							</Link>{" "}
-							for new pieces, studio notes, and quiet glimpses into how everything
-							is made.
+							for new pieces, studio notes, and quiet glimpses into how
+							everything is made.
 						</p>
 					</div>
 					<div className="space-y-3 pt-2">
@@ -62,8 +62,9 @@ export function JournalPreviewSection() {
 							Journal preview
 						</p>
 						<p className="max-w-md text-sm leading-relaxed text-ink/80">
-							A small, curated selection from recent posts – styled corners, table
-							settings, and quiet details that capture the mood of the collection.
+							A small, curated selection from recent posts – styled corners,
+							table settings, and quiet details that capture the mood of the
+							collection.
 						</p>
 					</div>
 				</div>

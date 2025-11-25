@@ -32,7 +32,11 @@ export function StudioPreviewSection() {
 	}
 
 	return (
-		<SectionShell id="inside" eyebrow={copy.sectionTitle} heading={copy.heading}>
+		<SectionShell
+			id="inside"
+			eyebrow={copy.sectionTitle}
+			heading={copy.heading}
+		>
 			<div className="space-y-10">
 				{/* Text content */}
 				<p className="body-lg max-w-2xl">{copy.body}</p>

@@ -38,11 +38,12 @@ export function ClientOnlyInstagramEmbed({
 					borderRadius: "8px",
 				}}
 			>
-				<div className="text-sm text-neutral-500">Loading Instagram post...</div>
+				<div className="text-sm text-neutral-500">
+					Loading Instagram post...
+				</div>
 			</div>
 		);
 	}
 
 	return <InstagramEmbed url={url} width={width} captioned={captioned} />;
 }
-
