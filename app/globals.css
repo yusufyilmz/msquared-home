@@ -3,66 +3,61 @@
 @tailwind utilities;
 
 :root {
-  --radius-xl: 1.2rem;
-  --color-background: #f8f3ea;
-  --color-surface: #fffcf6;
-  --color-accent: #b8905c;
-  --color-accent-soft: #e8cfaa;
-  --color-ink: #2a1d14;
-  --color-muted: #8a7563;
+	--radius-xl: 1.2rem;
+	/* Theme colors are set dynamically via layout.tsx */
 }
 
 body {
-  background-color: var(--color-background);
-  color: var(--color-ink);
+	background-color: var(--color-background);
+	color: var(--color-ink);
 }
 
 /* semantic helpers */
 
 .bg-background {
-  background-color: var(--color-background);
+	background-color: var(--color-background);
 }
 
 .bg-surface {
-  background-color: var(--color-surface);
+	background-color: var(--color-surface);
 }
 
 .bg-accent {
-  background-color: var(--color-accent);
+	background-color: var(--color-accent);
 }
 
 .bg-accent-soft {
-  background-color: var(--color-accent-soft);
+	background-color: var(--color-accent-soft);
 }
 
 .text-ink {
-  color: var(--color-ink);
+	color: var(--color-ink);
 }
 
 .text-muted {
-  color: var(--color-muted);
+	color: var(--color-muted);
 }
 
 .section {
-  @apply py-14 md:py-20;
+	@apply py-14 md:py-20;
 }
 
 .section-inner {
-  @apply max-w-5xl mx-auto px-4 md:px-6;
+	@apply max-w-5xl mx-auto px-4 md:px-6;
 }
 
 .section-title {
-  @apply text-xs tracking-[0.28em] uppercase text-muted mb-3;
+	@apply text-xs tracking-[0.28em] uppercase text-muted mb-3;
 }
 
 .h1 {
-  @apply font-display text-[2.6rem] md:text-[3.2rem] leading-[1.08] tracking-tight;
+	@apply font-display text-[2.6rem] md:text-[3.2rem] leading-[1.08] tracking-tight;
 }
 
 .h2 {
-  @apply font-display text-[2.1rem] md:text-[2.5rem] leading-snug tracking-tight;
+	@apply font-display text-[2.1rem] md:text-[2.5rem] leading-snug tracking-tight;
 }
 
 .body-lg {
-  @apply text-base md:text-lg text-muted leading-relaxed;
+	@apply text-base md:text-lg text-muted leading-relaxed;
 }

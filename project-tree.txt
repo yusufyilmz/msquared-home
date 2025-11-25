@@ -1,0 +1,59 @@
+.
+├── app
+│   ├── about
+│   │   └── page.tsx
+│   ├── contact
+│   │   └── page.tsx
+│   ├── globals.css
+│   ├── layout.tsx
+│   ├── page.tsx
+│   └── products
+│       └── page.tsx
+├── biome.json
+├── components
+│   ├── about-preview-section.tsx
+│   ├── categories-section.tsx
+│   ├── closing-cta-section.tsx
+│   ├── cta-button.tsx
+│   ├── featured-products-section.tsx
+│   ├── hero-section-2.tsx
+│   ├── hero-section.tsx
+│   ├── instagram-feeds-section.tsx
+│   ├── product-card.tsx
+│   ├── section-shell.tsx
+│   ├── site-footer.tsx
+│   ├── site-header.tsx
+│   ├── social-proof-section.tsx
+│   ├── studio-preview-section.tsx
+│   └── ui
+│       ├── button.tsx
+│       ├── card.tsx
+│       ├── input.tsx
+│       └── textarea.tsx
+├── config
+│   ├── siteCopy.ts
+│   └── themes.ts
+├── lib
+│   └── utils.ts
+├── next-env.d.ts
+├── next.config.mjs
+├── package-lock.json
+├── package.json
+├── postcss.config.cjs
+├── project-tree.txt
+├── public
+│   └── media
+│       ├── a.png
+│       ├── about.mp4
+│       ├── candles.jpg
+│       ├── hero.png
+│       ├── sets.jpg
+│       ├── studio.mp4
+│       ├── tabletop.jpg
+│       └── vessels.jpg
+├── README.md
+├── tailwind.config.ts
+├── tsconfig.json
+└── tsconfig.tsbuildinfo
+
+11 directories, 46 files

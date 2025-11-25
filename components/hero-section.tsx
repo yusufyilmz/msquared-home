@@ -51,63 +51,112 @@
 //   );
 // }
 
-
 // components/hero-section.tsx
 
+"use client";
+
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { CtaButton } from "@/components/cta-button";
 import { siteCopy } from "@/config/siteCopy";
 
 export function HeroSection() {
-  const copy = siteCopy.hero;
+	const copy = siteCopy.hero;
+	const videoRef = useRef<HTMLVideoElement | null>(null);
+	const [scrollY, setScrollY] = useState(0);
 
-  return (
-    <section className="relative isolate min-h-[80vh] overflow-hidden">
-      {/* background image */}
-      <div className="absolute inset-0">
-        <Image
-          src={copy.image}
-          alt="Soft, neutral-toned interior with elegant decor."
-          fill
-          className="object-cover"
-          priority
-          sizes="100vw"
-        />
-        {/* overlay for readability */}
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(0,0,0,0.28),_transparent_55%),linear-gradient(to_bottom,rgba(0,0,0,0.45),rgba(0,0,0,0.55))]" />
-      </div>
+	// Auto-play video on load
+	useEffect(() => {
+		const video = videoRef.current;
+		if (!video || !copy.video) return;
 
-      {/* content */}
-      <div className="relative flex min-h-[80vh] items-center">
-        <div className="section-inner">
-          <div className="max-w-xl space-y-6 text-white">
-            <p className="text-[0.75rem] uppercase tracking-[0.3em] text-white/70">
-              {copy.eyebrow} · Small-batch decor
-            </p>
-            <h1 className="font-display text-[2.5rem] leading-[1.05] md:text-[3rem]">
-              {copy.heading}
-            </h1>
-            <p className="text-sm md:text-base text-white/80">
-              {copy.subheading}
-            </p>
-            <div className="flex flex-wrap gap-4 pt-2">
-              <CtaButton href={copy.primaryCtaHref}>
-                {copy.primaryCtaLabel}
-              </CtaButton>
-              <CtaButton
-                variant="secondary"
-                href={copy.secondaryCtaHref}
-                className="border-white/30 bg-white/10 text-white hover:border-white/60"
-              >
-                {copy.secondaryCtaLabel}
-              </CtaButton>
-            </div>
-            <p className="pt-4 text-[0.7rem] uppercase tracking-[0.26em] text-white/60">
-              Made in small batches · Hand-poured and finished · Neutral palettes
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
+		// Try to play video on mount
+		video.play().catch((error) => {
+			// Autoplay was prevented, which is fine
+			console.log("Video autoplay prevented:", error);
+		});
+	}, [copy.video]);
+
+	// Track scroll position for overlay opacity
+	useEffect(() => {
+		const handleScroll = () => {
+			setScrollY(window.scrollY);
+		};
+
+		// Set initial scroll position
+		setScrollY(window.scrollY);
+
+		window.addEventListener("scroll", handleScroll, { passive: true });
+		return () => window.removeEventListener("scroll", handleScroll);
+	}, []);
+
+	// Calculate overlay opacity based on scroll position
+	// Transparent at top (0), fully visible after scrolling 200px
+	const overlayOpacity = Math.min(scrollY / 200, 1);
+
+	return (
+		<section className="relative isolate h-screen overflow-hidden">
+			{/* background image or video */}
+			<div className="absolute inset-0">
+				{copy.video ? (
+					<video
+						ref={videoRef}
+						src={copy.video}
+						className="w-full h-full object-cover"
+						loop
+						muted
+						playsInline
+						autoPlay
+						preload="auto"
+					>
+						Your browser does not support the video tag.
+					</video>
+				) : (
+					<Image
+						src={copy.image}
+						alt="Soft, neutral-toned interior with elegant decor."
+						fill
+						className="object-cover"
+						priority
+						sizes="100vw"
+					/>
+				)}
+				{/* overlay for readability */}
+				<div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(0,0,0,0.28),_transparent_55%),linear-gradient(to_bottom,rgba(0,0,0,0.45),rgba(0,0,0,0.55))]" />
+			</div>
+
+			{/* content */}
+			<div className="relative flex h-screen items-center">
+				<div className="section-inner">
+					<div className="max-w-xl space-y-6 text-white">
+						<p className="text-[0.75rem] uppercase tracking-[0.3em] text-white/70">
+							{copy.eyebrow} · Small-batch decor
+						</p>
+						<h1 className="font-display text-[2.5rem] leading-[1.05] md:text-[3rem]">
+							{copy.heading}
+						</h1>
+						<p className="text-sm md:text-base text-white/80">
+							{copy.subheading}
+						</p>
+						<div className="flex flex-wrap gap-4 pt-2">
+							<CtaButton href={copy.primaryCtaHref}>
+								{copy.primaryCtaLabel}
+							</CtaButton>
+							<CtaButton
+								variant="secondary"
+								href={copy.secondaryCtaHref}
+								className="border-white/30 bg-white/10 text-white hover:border-white/60"
+							>
+								{copy.secondaryCtaLabel}
+							</CtaButton>
+						</div>
+						<p className="pt-4 text-[0.7rem] uppercase tracking-[0.26em] text-white/60">
+							Made in small batches · Hand-poured and finished · Neutral
+							palettes
+						</p>
+					</div>
+				</div>
+			</div>
+		</section>
+	);
 }
